@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Farmer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Crop;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CropController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class CropController extends Controller
      */
     public function index()
     {
-        return view('farmer.crops.index')->with([
-            'crops' => Crop::where('user_id', Auth::user()->id)->get()
+        return view('farmer.products.index')->with([
+            'products' => Product::where('user_id', Auth::user()->id)->get()
         ]);
     }
 
@@ -28,7 +28,7 @@ class CropController extends Controller
      */
     public function create()
     {
-        return view('farmer.crops.create');
+        return view('farmer.products.create');
     }
 
     /**
@@ -46,12 +46,12 @@ class CropController extends Controller
             $ext = $request->file('photo')->getClientOriginalExtension();
             $name = uniqid().".".$ext;
 
-            $path = $request->file('photo')->storeAs('images/crops',$name,'public');
+            $path = $request->file('photo')->storeAs('images/products',$name,'public');
             $data['photo'] = $path;
         }
 
-        Crop::create($data);
-        return redirect()->route('farmer.crops.index')->with('success','Crop added');
+        Product::create($data);
+        return redirect()->route('farmer.products.index')->with('success','Product added');
     }
 
     /**
@@ -60,9 +60,9 @@ class CropController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Crop $crop)
+    public function show(Product $product)
     {
-        return view('farmer.crops.show', compact('crop'));
+        return view('farmer.products.show', compact('product'));
     }
 
     /**
@@ -71,9 +71,9 @@ class CropController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Crop $crop)
+    public function edit(Product $product)
     {
-        return view('farmer.crops.edit',compact('crop'));
+        return view('farmer.products.edit',compact('product'));
     }
 
     /**
@@ -83,19 +83,19 @@ class CropController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Crop $crop)
+    public function update(Request $request, Product $product)
     {
         $data = $request->all();
         if($request->hasFile('photo')){
             $ext = $request->file('photo')->getClientOriginalExtension();
             $name = uniqid().".".$ext;
 
-            $path = $request->file('photo')->storeAs('images/crops',$name,'public');
+            $path = $request->file('photo')->storeAs('images/products',$name,'public');
             $data['photo'] = $path;
         }
 
-        $crop->update($data);
-        return redirect()->route('farmer.crops.index')->with('success','Crop updated');
+        $product->update($data);
+        return redirect()->route('farmer.products.index')->with('success','Product updated');
     }
 
     /**
@@ -104,10 +104,10 @@ class CropController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Crop $crop)
+    public function destroy(Product $product)
     {
-        $crop->delete();
+        $product->delete();
 
-        return redirect()->route('farmer.crops.index')->withSuccess('Crop removed');
+        return redirect()->route('farmer.products.index')->withSuccess('Product removed');
     }
 }

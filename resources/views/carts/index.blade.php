@@ -45,12 +45,12 @@
                     <tbody>
                         @foreach ($carts as $cart)
                             <tr>
-                                <td scope="row">{{ $cart->crop->title }}</td>
+                                <td scope="row">{{ $cart->product->title }}</td>
                                 <td>
                                     <form action="{{ route('carts.update', $cart->id) }}" method="post">
                                         @csrf
                                         @method('PUT')
-                                        <label for="quantity">Quantity in {{ $cart->crop->unit }}</label>
+                                        <label for="quantity">Quantity in {{ $cart->product->unit }}</label>
                                         <div class="input-group">
                                             <input type="number" class="form-control" name="quantity" id="quantity"
                                                 placeholder="Quantity" value="{{ old('quantity', $cart->quantity) }}">

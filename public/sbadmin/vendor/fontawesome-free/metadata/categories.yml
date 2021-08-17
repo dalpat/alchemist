@@ -169,10 +169,10 @@ audio-video:
     - film
     - forward
     - headphones
-    - microphone
-    - microphone-alt
-    - microphone-alt-slash
-    - microphone-slash
+    - miproducthone
+    - miproducthone-alt
+    - miproducthone-alt-slash
+    - miproducthone-slash
     - music
     - pause
     - pause-circle
@@ -528,10 +528,10 @@ communication:
     - fax
     - inbox
     - language
-    - microphone
-    - microphone-alt
-    - microphone-alt-slash
-    - microphone-slash
+    - miproducthone
+    - miproducthone-alt
+    - miproducthone-alt-slash
+    - miproducthone-slash
     - mobile
     - mobile-alt
     - paper-plane
@@ -648,8 +648,8 @@ design:
     - brush
     - clone
     - copy
-    - crop
-    - crop-alt
+    - product
+    - product-alt
     - crosshairs
     - cut
     - drafting-compass
@@ -1275,9 +1275,9 @@ interfaces:
     - marker
     - medal
     - meh
-    - microphone
-    - microphone-alt
-    - microphone-slash
+    - miproducthone
+    - miproducthone-alt
+    - miproducthone-slash
     - minus
     - minus-circle
     - minus-square
@@ -1656,10 +1656,10 @@ music:
     - guitar
     - headphones
     - headphones-alt
-    - microphone
-    - microphone-alt
-    - microphone-alt-slash
-    - microphone-slash
+    - miproducthone
+    - miproducthone-alt
+    - miproducthone-alt-slash
+    - miproducthone-slash
     - music
     - napster
     - play
@@ -1806,8 +1806,8 @@ objects:
     - medkit
     - memory
     - microchip
-    - microphone
-    - microphone-alt
+    - miproducthone
+    - miproducthone-alt
     - mitten
     - mobile
     - mobile-alt
@@ -2282,10 +2282,10 @@ status:
     - lock-open
     - map-marker
     - map-marker-alt
-    - microphone
-    - microphone-alt
-    - microphone-alt-slash
-    - microphone-slash
+    - miproducthone
+    - miproducthone-alt
+    - miproducthone-alt-slash
+    - miproducthone-slash
     - minus
     - minus-circle
     - minus-square
@@ -2355,8 +2355,8 @@ toggle:
     - check-circle
     - circle
     - dot-circle
-    - microphone
-    - microphone-slash
+    - miproducthone
+    - miproducthone-slash
     - star
     - star-half
     - star-half-alt

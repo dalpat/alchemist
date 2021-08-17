@@ -1167,10 +1167,10 @@ readers do not read off random characters that represent icons */
 .fa-critical-role:before {
   content: "\f6c9"; }
 
-.fa-crop:before {
+.fa-product:before {
   content: "\f125"; }
 
-.fa-crop-alt:before {
+.fa-product-alt:before {
   content: "\f565"; }
 
 .fa-cross:before {
@@ -2694,16 +2694,16 @@ readers do not read off random characters that represent icons */
 .fa-microchip:before {
   content: "\f2db"; }
 
-.fa-microphone:before {
+.fa-miproducthone:before {
   content: "\f130"; }
 
-.fa-microphone-alt:before {
+.fa-miproducthone-alt:before {
   content: "\f3c9"; }
 
-.fa-microphone-alt-slash:before {
+.fa-miproducthone-alt-slash:before {
   content: "\f539"; }
 
-.fa-microphone-slash:before {
+.fa-miproducthone-slash:before {
   content: "\f131"; }
 
 .fa-microscope:before {

@@ -17,12 +17,12 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts = Cart::with('crop')->where('vendor_id', Auth::user()->id)->get();
+        $carts = Cart::with('product')->where('vendor_id', Auth::user()->id)->get();
 
         $total_bill_amount = 0;
 
         foreach ($carts as $cart) {
-            $total_bill_amount += ($cart->crop->price * $cart->quantity);
+            $total_bill_amount += ($cart->product->price * $cart->quantity);
         }
 
         return view('carts.index', compact('carts','total_bill_amount'));
@@ -37,7 +37,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = Cart::where('vendor_id', Auth::user()->id)->where('crop_id', $request->crop_id)->first();
+        $cart = Cart::where('vendor_id', Auth::user()->id)->where('product_id', $request->product_id)->first();
         if ($cart) {
             return redirect()->back()->withError('Already in cart');
         }

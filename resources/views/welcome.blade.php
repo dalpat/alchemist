@@ -24,7 +24,7 @@
         @endif
 
 
-        {{-- crops block --}}
+        {{-- products block --}}
         <div class="row my-3 bg-light p-3 rounded">
             <div class="col-12">
                 <div class="clearfix">
@@ -32,27 +32,27 @@
                         Recently verified
                     </div>
                     <div class="float-right">
-                        <a href="{{ route('crops.index') }}" class="btn btn-outline-primary">View All</a>
+                        <a href="{{ route('products.index') }}" class="btn btn-outline-primary">View All</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            @foreach ($crops as $crop)
+            @foreach ($products as $product)
             <div class="col-12 col-md-3">
                 <div class="card h-100">
-                    <img class="card-img-top w-100 img-fluid img-thumbnail p-4 border-0 rounded" src="{{ asset('storage/'.$crop->photo) }}" alt="">
+                    <img class="card-img-top w-100 img-fluid img-thumbnail p-4 border-0 rounded" src="{{ asset('storage/'.$product->photo) }}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">{{ $crop->title }}</h4>
-                        <p class="card-text">Price: <i class="fa fa-inr" aria-hidden="true"></i> {{ $crop->price }} / {{ $crop->unit }}</p>
+                        <h4 class="card-title">{{ $product->title }}</h4>
+                        <p class="card-text">Price: <i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price }} / {{ $product->unit }}</p>
                     </div>
 
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="{{ route('crops.show', $crop->id) }}">View</a>
+                        <a class="btn btn-primary" href="{{ route('products.show', $product->id) }}">View</a>
 
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                             @csrf
-                            <input type="hidden" name="crop_id" value="{{ $crop->id }}">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <button class="btn btn-primary">Add to cart</button>
                         </form>
                     </div>
@@ -60,7 +60,7 @@
             </div>
             @endforeach
         </div>
-        {{-- end of crops block --}}
+        {{-- end of products block --}}
 
         {{-- news block --}}
         <div class="row my-3 bg-light p-3 rounded">

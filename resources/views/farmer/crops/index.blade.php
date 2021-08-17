@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('farmer.crops.create') }}" class="btn btn-primary">Add Crop</a>
+                <a href="{{ route('farmer.products.create') }}" class="btn btn-primary">Add Product</a>
             </div>
         </div>
         <div class="row my-3">
@@ -35,15 +35,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($crops as $crop)
+                        @foreach ($products as $product)
                             <tr>
-                                <td scope="row">{{ $crop->updated_at }}</td>
-                                <td>{{ $crop->title }}</td>
-                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $crop->price . '/' . $crop->unit }}</td>
-                                <td><span class="badge badge-info h4">{{ $crop->status }}</span></td>
+                                <td scope="row">{{ $product->updated_at }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price . '/' . $product->unit }}</td>
+                                <td><span class="badge badge-info h4">{{ $product->status }}</span></td>
                                 <td>
-                                    <a href="{{ route('farmer.crops.edit', $crop->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('farmer.crops.destroy', $crop->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure?')">
+                                    <a href="{{ route('farmer.products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                                    <form action="{{ route('farmer.products.destroy', $product->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure?')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

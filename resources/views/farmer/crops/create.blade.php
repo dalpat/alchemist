@@ -19,11 +19,11 @@
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('farmer.crops.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('farmer.products.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" id="title" placeholder="Crop title"
+                        <input type="text" class="form-control" name="title" id="title" placeholder="Product title"
                             value="{{ old('title') }}">
                         @error('title')
                             <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
 
                     <div class="form-group">
                         <label for="title">Photo</label>
-                        <input type="file" class="form-control" name="photo" id="photo" placeholder="Crop title">
+                        <input type="file" class="form-control" name="photo" id="photo" placeholder="Product title">
                         @error('photo')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@
 
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" class="form-control" name="price" id="price" placeholder="Crop price"
+                        <input type="number" class="form-control" name="price" id="price" placeholder="Product price"
                             value="{{ old('price') }}" step="0.5">
                         @error('price')
                             <span class="invalid-feedback" role="alert">

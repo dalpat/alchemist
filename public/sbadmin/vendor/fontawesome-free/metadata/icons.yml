@@ -5025,12 +5025,12 @@ critical-role:
     - brands
   unicode: f6c9
   voted: false
-crop:
+product:
   changes:
     - '3.1'
     - 5.0.0
     - 5.1.0
-  label: crop
+  label: product
   search:
     terms:
       - design
@@ -5042,10 +5042,10 @@ crop:
     - solid
   unicode: f125
   voted: false
-crop-alt:
+product-alt:
   changes:
     - 5.1.0
-  label: Alternate Crop
+  label: Alternate Product
   search:
     terms:
       - design
@@ -9952,7 +9952,7 @@ headset:
       - gaming
       - listen
       - live chat
-      - microphone
+      - miproducthone
       - shot caller
       - sound
       - support
@@ -12637,12 +12637,12 @@ microchip:
     - solid
   unicode: f2db
   voted: false
-microphone:
+miproducthone:
   changes:
     - '3.1'
     - 5.0.0
     - 5.0.13
-  label: microphone
+  label: miproducthone
   search:
     terms:
       - audio
@@ -12655,11 +12655,11 @@ microphone:
     - solid
   unicode: f130
   voted: false
-microphone-alt:
+miproducthone-alt:
   changes:
     - 5.0.0
     - 5.0.13
-  label: Alternate Microphone
+  label: Alternate Miproducthone
   search:
     terms:
       - audio
@@ -12672,10 +12672,10 @@ microphone-alt:
     - solid
   unicode: f3c9
   voted: false
-microphone-alt-slash:
+miproducthone-alt-slash:
   changes:
     - 5.0.13
-  label: Alternate Microphone Slash
+  label: Alternate Miproducthone Slash
   search:
     terms:
       - audio
@@ -12690,12 +12690,12 @@ microphone-alt-slash:
     - solid
   unicode: f539
   voted: false
-microphone-slash:
+miproducthone-slash:
   changes:
     - '3.1'
     - 5.0.0
     - 5.0.13
-  label: Microphone Slash
+  label: Miproducthone Slash
   search:
     terms:
       - audio

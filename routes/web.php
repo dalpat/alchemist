@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\CropController as AdminCropController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\CropController;
-use App\Http\Controllers\Farmer\CropController as FarmerCropController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Farmer\ProductController as FarmerProductController;
 use App\Http\Controllers\Farmer\DashboardController as FarmerDashboardController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\WelcomeController;
@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::resource('crops', CropController::class)->only(['index', 'show']);
+Route::resource('products', ProductController::class)->only(['index', 'show']);
 Route::resource('news', NewsController::class)->only(['index', 'show']);
 
 Auth::routes();
@@ -38,7 +38,7 @@ Route::group([
     'as' => 'admin.'
 ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-    Route::resource('crops', AdminCropController::class)->only(['index', 'update']);
+    Route::resource('products', AdminProductController::class)->only(['index', 'update']);
 
     Route::resource('news', AdminNewsController::class);
 });
@@ -51,7 +51,7 @@ Route::group([
     'as' => 'farmer.',
 ], function () {
     Route::get('dashboard', [FarmerDashboardController::class, 'index'])->name('dashboard.index');
-    Route::resource('crops', FarmerCropController::class);
+    Route::resource('products', FarmerProductController::class);
 });
 
 

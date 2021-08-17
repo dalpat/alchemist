@@ -28,20 +28,20 @@
 
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="{{ asset('storage/' . $crop->photo) }}" alt="" class="img-thumbnail">
+                <img src="{{ asset('storage/' . $product->photo) }}" alt="" class="img-thumbnail">
             </div>
 
             <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">{{ $crop->title }}</h4>
+                        <h4 class="card-title">{{ $product->title }}</h4>
                         <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i>
-                            {{ $crop->price . '/' . $crop->unit }}</p>
-                        <p class="card-text">Farmer: {{ $crop->farmer->name }}</p>
+                            {{ $product->price . '/' . $product->unit }}</p>
+                        <p class="card-text">Farmer: {{ $product->farmer->name }}</p>
 
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                             @csrf
-                            <input type="hidden" name="crop_id" value="{{ $crop->id }}">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <button class="btn btn-primary">Add to cart</button>
                         </form>
 
@@ -54,9 +54,9 @@
             <div class="col-12">
                 <h1 id="details">Product Description</h1>
                 <p>
-                    {{ $crop->description }}
+                    {{ $product->description }}
                 </p>
-                <p>Provided by: {{ $crop->farmer->name }}</p>
+                <p>Provided by: {{ $product->farmer->name }}</p>
             </div>
         </div>
     </div>

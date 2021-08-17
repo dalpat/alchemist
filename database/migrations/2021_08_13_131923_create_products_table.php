@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCropsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCropsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crops', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->string('photo')->default('images/crops/default.png');
+            $table->string('photo')->default('images/products/default.png');
             $table->float('price',8,2);
             $table->string('unit');
             $table->string('status')->default('INACTIVE');
@@ -33,6 +33,6 @@ class CreateCropsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crops');
+        Schema::dropIfExists('products');
     }
 }

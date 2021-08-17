@@ -31,17 +31,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($crops as $crop)
+                        @foreach ($products as $product)
                             <tr>
-                                <td scope="row">{{ $crop->updated_at }}</td>
-                                <td>{{ $crop->farmer->name }}</td>
-                                <td>{{ $crop->title }}</td>
-                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $crop->price . '/' . $crop->unit }}
+                                <td scope="row">{{ $product->updated_at }}</td>
+                                <td>{{ $product->farmer->name }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price . '/' . $product->unit }}
                                 </td>
                                 <td>
-                                    <span class="badge badge-info h4">{{ $crop->status }}</span>
-                                    @if ($crop->status != 'VERIFIED')
-                                        <form action="{{ route('admin.crops.update', $crop->id) }}" method="post" class="d-inline">
+                                    <span class="badge badge-info h4">{{ $product->status }}</span>
+                                    @if ($product->status != 'VERIFIED')
+                                        <form action="{{ route('admin.products.update', $product->id) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('PUT')
                                             <input type="hidden" name="status" value="VERIFIED">

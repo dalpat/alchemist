@@ -14,15 +14,15 @@ class Cart extends Model
      *
      * @var array
      */
-    protected $fillable = ['vendor_id', 'crop_id', 'quantity'];
+    protected $fillable = ['vendor_id', 'product_id', 'quantity'];
 
     // public function vendor()
     // {
     //     return $this->belongsTo(User::class, 'vendor_id', 'id');
     // }
 
-    public function crop()
+    public function product()
     {
-        return $this->belongsTo(Crop::class);
+        return $this->belongsTo(Product::class);
     }
 }

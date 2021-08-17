@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Crop;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CropController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class CropController extends Controller
      */
     public function index()
     {
-        $crops = Crop::with('farmer')->latest()->get();
-        return view('admin.crops.index')->with([
-            'crops' => $crops
+        $products = Product::with('farmer')->latest()->get();
+        return view('admin.products.index')->with([
+            'products' => $products
         ]);
     }
 
@@ -39,12 +39,12 @@ class CropController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Crop $crop)
+    public function update(Request $request, Product $product)
     {
         $data = $request->all();
 
-        $crop->update($data);
+        $product->update($data);
 
-        return redirect()->route('admin.crops.index')->withSuccess('Updated');
+        return redirect()->route('admin.products.index')->withSuccess('Updated');
     }
 }

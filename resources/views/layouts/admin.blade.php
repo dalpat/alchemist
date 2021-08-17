@@ -55,9 +55,9 @@
                     <span>Farmers</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.crops.index') }}">
+                <a class="nav-link" href="{{ route('admin.products.index') }}">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Crops</span></a>
+                    <span>Products</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="">

@@ -1,4 +1,4 @@
-@extends('layouts.farmer')
+@extends('layouts.app')
 
 
 @section('content')

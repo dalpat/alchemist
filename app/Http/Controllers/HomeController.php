@@ -15,9 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->type == "FARMER") {
-            return redirect()->route('farmer.dashboard.index');
-        }
         if (Auth::user()->type == "ADMIN") {
             return redirect()->route('admin.dashboard.index');
         }

@@ -35,16 +35,16 @@
                             <h4 class="card-title">{{ $product->title }}</h4>
                             <p class="card-text">Price: <i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price }} /
                                 {{ $product->unit }}</p>
-                            <p>Provider: {{ $product->farmer->name }}</p>
+                            <p>Provider: {{ $product->user->name }}</p>
                         </div>
 
                         <div class="card-footer">
-                            <a class="btn btn-primary" href="{{ route('products.show', $product->id) }}">View</a>
+                            <a class="btn btn-primary" href="{{ route('items.show', $product->id) }}">View</a>
 
                             <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                <button class="btn btn-primary">Add to cart</button>
+                                <button class="btn btn-primary">Buy Now</button>
                             </form>
                         </div>
                     </div>

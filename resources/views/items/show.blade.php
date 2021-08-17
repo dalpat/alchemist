@@ -45,7 +45,6 @@
                             <button class="btn btn-primary">Buy Now</button>
                         </form>
 
-                        <a href="#details" class="btn btn-link">View details</a>
                     </div>
                 </div>
             </div>

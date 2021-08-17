@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
@@ -35,6 +36,7 @@ Route::group([
 ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::resource('products', AdminProductController::class)->only(['index', 'update']);
+    Route::resource('users', UserController::class)->only(['index', 'update']);
 
     Route::resource('news', AdminNewsController::class);
 });

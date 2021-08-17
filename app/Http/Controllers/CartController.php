@@ -17,15 +17,15 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts = Cart::with('product')->where('vendor_id', Auth::user()->id)->get();
+        // $carts = Cart::with('product')->where('vendor_id', Auth::user()->id)->get();
 
-        $total_bill_amount = 0;
+        // $total_bill_amount = 0;
 
-        foreach ($carts as $cart) {
-            $total_bill_amount += ($cart->product->price * $cart->quantity);
-        }
+        // foreach ($carts as $cart) {
+        //     $total_bill_amount += ($cart->product->price * $cart->quantity);
+        // }
 
-        return view('carts.index', compact('carts','total_bill_amount'));
+        // return view('carts.index', compact('carts','total_bill_amount'));
     }
 
 

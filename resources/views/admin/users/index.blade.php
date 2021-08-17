@@ -24,24 +24,22 @@
                         <tr>
                             <th width="200">Updated on</th>
                             <th>User</th>
-                            <th>Title</th>
-                            <th>Price/Unit</th>
+                            <th>Items</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($products as $product)
+                        @foreach ($users as $user)
                             <tr>
-                                <td scope="row">{{ $product->updated_at }}</td>
-                                <td>{{ $product->user->name }}</td>
-                                <td>{{ $product->title }}</td>
-                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price . '/' . $product->unit }}
+                                <td scope="row">{{ $user->updated_at }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ count($user->products) }}
                                 </td>
                                 <td>
-                                    <span class="badge badge-info h4">{{ $product->status }}</span>
-                                    @if ($product->status != 'VERIFIED')
-                                        <form action="{{ route('admin.products.update', $product->id) }}" method="post" class="d-inline">
+                                    <span class="badge badge-info h4">{{ $user->status }}</span>
+                                    @if ($user->status != 'VERIFIED')
+                                        <form action="{{ route('admin.users.update', $user->id) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('PUT')
                                             <input type="hidden" name="status" value="VERIFIED">

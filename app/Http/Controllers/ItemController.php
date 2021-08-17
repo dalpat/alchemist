@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $products = Product::with('farmer')->latest()->get();
+        $products = Product::with('user')->latest()->get();
         return view('items.index',compact('products'));
     }
 

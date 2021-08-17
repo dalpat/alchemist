@@ -64,15 +64,6 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('carts.index') }}">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span class="badge badge-pill badge-info">
-                                        {{ count(Auth::user()->cart_items) }}
-                                    </span>
-                                </a>
-
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -80,11 +71,16 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a href="" class="dropdown-item">My Items</a>
+                                    <a href="" class="dropdown-item">My Sales</a>
+                                    <a href="" class="dropdown-item">My Orders</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

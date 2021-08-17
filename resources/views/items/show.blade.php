@@ -45,6 +45,9 @@
                             <button class="btn btn-primary">Buy Now</button>
                         </form>
 
+                        <a class="btn btn-primary" href="mailto:{{ $product->user->email }}"><i class="fa fa-envelope" aria-hidden="true"></i> Mail</a>
+
+
                     </div>
                 </div>
             </div>

@@ -39,14 +39,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <a class="btn btn-primary" href="{{ route('items.show', $product->id) }}">View</a>
-
-                            <form action="{{ route('carts.store') }}" method="post" class="d-inline">
-                                @csrf
-                                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                <button class="btn btn-primary">Buy Now</button>
-                            </form>
-                        </div>
+                            <a class="btn btn-primary" href="{{ route('items.show', $product->id) }}">View</a>                        </div>
                     </div>
                 </div>
             @endforeach

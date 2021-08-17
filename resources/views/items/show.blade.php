@@ -28,7 +28,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="{{ asset('storage/' . $product->photo) }}" alt="" class="img-thumbnail">
+                <img src="{{ asset('storage/' . $product->photo) }}" alt="" class="img-thumbnail w-100  p-5">
             </div>
 
             <div class="col-12 col-md-8">
@@ -37,12 +37,12 @@
                         <h4 class="card-title">{{ $product->title }}</h4>
                         <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i>
                             {{ $product->price . '/' . $product->unit }}</p>
-                        <p class="card-text">Farmer: {{ $product->farmer->name }}</p>
+                        <p class="card-text">Seller: {{ $product->user->name }}</p>
 
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <button class="btn btn-primary">Add to cart</button>
+                            <button class="btn btn-primary">Buy Now</button>
                         </form>
 
                         <a href="#details" class="btn btn-link">View details</a>
@@ -56,7 +56,7 @@
                 <p>
                     {{ $product->description }}
                 </p>
-                <p>Provided by: {{ $product->farmer->name }}</p>
+                <p>Provided by: {{ $product->user->name }}</p>
             </div>
         </div>
     </div>

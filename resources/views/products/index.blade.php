@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('farmer.products.create') }}" class="btn btn-primary">Add Product</a>
+                <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
             </div>
         </div>
         <div class="row my-3">
@@ -42,8 +42,8 @@
                                 <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price . '/' . $product->unit }}</td>
                                 <td><span class="badge badge-info h4">{{ $product->status }}</span></td>
                                 <td>
-                                    <a href="{{ route('farmer.products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('farmer.products.destroy', $product->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure?')">
+                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                                    <form action="{{ route('products.destroy', $product->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure?')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

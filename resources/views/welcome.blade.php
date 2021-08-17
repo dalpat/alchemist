@@ -32,7 +32,7 @@
                         Recently verified
                     </div>
                     <div class="float-right">
-                        <a href="{{ route('products.index') }}" class="btn btn-outline-primary">View All</a>
+                        <a href="{{ route('items.index') }}" class="btn btn-outline-primary">View All</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="{{ route('products.show', $product->id) }}">View</a>
+                        <a class="btn btn-primary" href="{{ route('items.show', $product->id) }}">View</a>
 
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                             @csrf

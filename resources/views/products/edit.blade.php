@@ -19,12 +19,13 @@
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('farmer.products.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" class="form-control" name="title" id="title" placeholder="Product title"
-                            value="{{ old('title') }}">
+                            value="{{ old('title', $product->title) }}">
                         @error('title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -40,12 +41,14 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+
+                        <img src="{{ asset('storage/'.$product->photo) }}" alt="product photo" style="width: 100px;" class="img-thumbnail">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea class="form-control" name="description" id="description"
-                            rows="3">{{ old('description') }}</textarea>
+                            rows="3">{{ old('description', $product->description) }}</textarea>
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -56,7 +59,7 @@
                     <div class="form-group">
                         <label for="price">Price</label>
                         <input type="number" class="form-control" name="price" id="price" placeholder="Product price"
-                            value="{{ old('price') }}" step="0.5">
+                            value="{{ old('price', $product->price) }}" step="0.5">
                         @error('price')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -67,10 +70,10 @@
                     <div class="form-group">
                         <label for="unit">Unit</label>
                         <select class="form-control" name="unit" id="unit">
-                            <option value="KG">KG</option>
-                            <option value="KWINTAL">KWINTAL</option>
-                            <option value="TONE">TON</option>
-                            <option value="LTR">LTR</option>
+                            <option value="KG" @if($product->unit == "KG") selected @endif>KG</option>
+                            <option value="KWINTAL" @if($product->unit == "KWINTAL") selected @endif>KWINTAL</option>
+                            <option value="TONE" @if($product->unit == "TONE") selected @endif>TON</option>
+                            <option value="LTR" @if($product->unit == "LTR") selected @endif>LTR</option>
                         </select>
                         @error('unit')
                             <span class="invalid-feedback" role="alert">

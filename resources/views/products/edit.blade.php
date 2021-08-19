@@ -67,21 +67,6 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <label for="unit">Unit</label>
-                        <select class="form-control" name="unit" id="unit">
-                            <option value="KG" @if($product->unit == "KG") selected @endif>KG</option>
-                            <option value="KWINTAL" @if($product->unit == "KWINTAL") selected @endif>KWINTAL</option>
-                            <option value="TONE" @if($product->unit == "TONE") selected @endif>TON</option>
-                            <option value="LTR" @if($product->unit == "LTR") selected @endif>LTR</option>
-                        </select>
-                        @error('unit')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
@@ -26,6 +27,10 @@ Route::group([
     Route::resource('products', ProductController::class);
     Route::resource('sales', ProductController::class);
     Route::resource('orders', ProductController::class);
+
+    // Checkout routes
+    Route::get('/confirm',[CheckoutController::class,'confirm'])->name('checkout.confirmation');
+    Route::post('/confirm',[CheckoutController::class,'placeorder'])->name('checkout.placeorder');
 });
 
 // Routes for admin

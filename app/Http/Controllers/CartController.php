@@ -37,15 +37,15 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = Cart::where('vendor_id', Auth::user()->id)->where('product_id', $request->product_id)->first();
+        $cart = Cart::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first();
         if ($cart) {
-            return redirect()->back()->withError('Already in cart');
+            $cart->delete();
         }
 
         $data = $request->all();
-        $data['vendor_id'] = Auth::user()->id;
+        $data['user_id'] = Auth::user()->id;
         Cart::create($data);
-        return redirect()->back()->withSuccess('Cart updated');
+        return redirect()->route('checkout.confirmation');
     }
 
 

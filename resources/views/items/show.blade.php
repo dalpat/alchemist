@@ -42,10 +42,11 @@
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <button class="btn btn-primary">Buy Now</button>
+                            <button type="submit" class="btn btn-primary">Buy Now</button>
                         </form>
 
-                        <a class="btn btn-primary" href="mailto:{{ $product->user->email }}"><i class="fa fa-envelope" aria-hidden="true"></i> Mail</a>
+                        <a class="btn btn-primary" href="mailto:{{ $product->user->email }}"><i class="fa fa-envelope"
+                                aria-hidden="true"></i> Mail</a>
 
 
                     </div>

@@ -39,7 +39,7 @@
                             <tr>
                                 <td scope="row">{{ $product->updated_at }}</td>
                                 <td>{{ $product->title }}</td>
-                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price . '/' . $product->unit }}</td>
+                                <td><i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price }}</td>
                                 <td><span class="badge badge-info h4">{{ $product->status }}</span></td>
                                 <td>
                                     <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">Edit</a>

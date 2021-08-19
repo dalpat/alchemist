@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class OrderAddress extends Model
 {
     use HasFactory;
 
@@ -15,16 +15,14 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'title',
-        'description',
-        'photo',
-        'price',
-        'status',
+        'first_name',
+        'last_name',
+        'email',
+        'mobile',
+        'landmark',
+        'pincode',
+        'address',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
 }

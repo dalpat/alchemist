@@ -14,7 +14,7 @@ class Cart extends Model
      *
      * @var array
      */
-    protected $fillable = ['vendor_id', 'product_id', 'quantity'];
+    protected $fillable = ['user_id', 'product_id', 'quantity'];
 
     // public function vendor()
     // {
@@ -25,4 +25,10 @@ class Cart extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function item()
+    {
+        return $this->belongsTo(Product::class,'product_id');
+    }
+
 }

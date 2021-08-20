@@ -15,6 +15,8 @@ class OrderAddress extends Model
      * @var array
      */
     protected $fillable = [
+        'order_id',
+        'order_number',
         'first_name',
         'last_name',
         'email',

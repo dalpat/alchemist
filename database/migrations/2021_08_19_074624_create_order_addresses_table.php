@@ -17,7 +17,6 @@ class CreateOrderAddressesTable extends Migration
             $table->id();
             $table->string('order_id');
             $table->string('order_number');
-            $table->string('product_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');

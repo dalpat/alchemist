@@ -31,6 +31,7 @@ Route::group([
     // Checkout routes
     Route::get('/confirm',[CheckoutController::class,'confirm'])->name('checkout.confirmation');
     Route::post('/confirm',[CheckoutController::class,'placeorder'])->name('checkout.placeorder');
+    Route::get('/thankyou',[CheckoutController::class,'thankyou'])->name('checkout.thankyou');
 });
 
 // Routes for admin

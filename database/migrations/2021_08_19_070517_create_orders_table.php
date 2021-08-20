@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('oder_number');
+            $table->string('order_number');
             $table->string('seller_id');
             $table->string('buyer_id');
             $table->string('order_status')->default('PLACED');

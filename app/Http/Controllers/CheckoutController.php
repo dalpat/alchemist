@@ -52,31 +52,32 @@ class CheckoutController extends Controller
             'address'=>['required'],
         ]);
 
-        $cart =  Cart::where('vendor_id', Auth::user()->id)->first();
+        $cart =  Cart::where('user_id', Auth::user()->id)->first();
 
         $data['buyer_id'] = Auth::user()->id;
         $data['seller_id'] = $cart->product->user->id;
         $data['order_number'] = Str::upper(uniqid());
         $order = Order::create($data);
 
-        $itemData = $cart->product;
+        // $itemData = $cart->product;
 
+        $itemData['order_id'] = $order->id;
         $itemData['order_number'] = $order->order_number;
         $itemData['product_id'] = $cart->product->id;
         $itemData['product_title'] = $cart->product->title;
         $itemData['product_price'] = $cart->product->price;
-        $itemData['order_id'] = $order->id;
         $itemData['payment_status'] = 'PENDING';
         $itemData['delivery_status'] = 'PENDING';
-        $itemData['order_number'] = $order->order_number;
 
-        $orderItem = OrderItem::create($itemData);
+        OrderItem::create($itemData);
 
         $addressData = $request->all();
         $addressData['order_id'] = $order->id;
         $addressData['order_number'] = $order->order_number;
 
-        $orderAddress = OrderAddress::create($addressData);
+        OrderAddress::create($addressData);
+
+        $cart->delete();
 
         return redirect()->route('checkout.thankyou')->withSuccess('Order Placed successfully. Your order number is '.$order->order_number);
     }
@@ -87,9 +88,9 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function thankyou()
     {
-        //
+        return view('checkout.thankyou');
     }
 
     /**

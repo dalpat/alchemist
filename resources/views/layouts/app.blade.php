@@ -75,7 +75,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a href="" class="dropdown-item">My Items</a>
+                                    <a href="{{ route('products.index') }}" class="dropdown-item">My Items</a>
                                     <a href="" class="dropdown-item">My Sales</a>
                                     <a href="" class="dropdown-item">My Orders</a>
 

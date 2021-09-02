@@ -17,10 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('photo')->default('images/products/default.png');
             $table->float('price',8,2);
-            $table->string('unit');
             $table->string('status')->default('INACTIVE');
             $table->timestamps();
         });

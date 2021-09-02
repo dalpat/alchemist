@@ -33,8 +33,7 @@
                             src="{{ asset('storage/' . $product->photo) }}" alt="">
                         <div class="card-body">
                             <h4 class="card-title">{{ $product->title }}</h4>
-                            <p class="card-text">Price: <i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price }} /
-                                {{ $product->unit }}</p>
+                            <p class="card-text">Price: <i class="fa fa-inr" aria-hidden="true"></i> {{ $product->price }}</p>
                             <p>Provider: {{ $product->user->name }}</p>
                         </div>
 

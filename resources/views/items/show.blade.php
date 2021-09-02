@@ -36,7 +36,7 @@
                     <div class="card-body">
                         <h4 class="card-title">{{ $product->title }}</h4>
                         <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i>
-                            {{ $product->price . '/' . $product->unit }}</p>
+                            {{ $product->price }}</p>
                         <p class="card-text">Seller: {{ $product->user->name }}</p>
 
                         <form action="{{ route('carts.store') }}" method="post" class="d-inline">

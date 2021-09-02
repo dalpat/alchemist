@@ -29,7 +29,7 @@
                         <tr>
                             <th width="200">Updated on</th>
                             <th>Title</th>
-                            <th>Price/Unit</th>
+                            <th>Price</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>

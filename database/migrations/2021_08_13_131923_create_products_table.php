@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('photo')->default('images/products/default.png');
-            $table->float('price',8,2);
+            $table->string('price')->default(1);
             $table->string('status')->default('INACTIVE');
             $table->timestamps();
         });
